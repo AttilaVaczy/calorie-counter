@@ -20,6 +20,11 @@ app.post('/meals', function (req, res) {
   res.status(201).json({'status': 'ok'});
 });
 
+app.delete('/meals/:id', function (req, res) {
+  var item = items.deleteItem(req.body);
+
+})
+
 app.listen(3000, function () {
   console.log('Listening on port 3000...')
 });

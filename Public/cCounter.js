@@ -27,6 +27,8 @@ function postItemToServer(name, calorie, date) {
   };
 }
 
+
+
 var refresh = function () {
   document.querySelector('.cal-container').innerHTML = '';
   listCalItems(listCallback);

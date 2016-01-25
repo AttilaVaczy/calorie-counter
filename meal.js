@@ -35,7 +35,7 @@ function deleteItem(id) {
   connection.query ('DELETE FROM meals WHERE ID = ?', id, function(err, result) {
     if (err) throw err;
     console.log(result.deleteID);
-  })
+  });
 }
 
 module.exports = {
