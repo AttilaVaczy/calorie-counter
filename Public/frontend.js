@@ -6,7 +6,5 @@ var calorieInput = document.querySelector('.calorie-input');
 var dateInput = document.querySelector('.date-input');
 
 submitButton.addEventListener('click', function () {
-  postItemToServer(mealInput.value, refresh)
-  postItemToServer(calorieInput.value, refresh)
-  postItemToServer(dateInput.value, refresh)
+  postItemToServer(mealInput.value, calorieInput.value, dateInput.value)
 });
