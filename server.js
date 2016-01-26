@@ -20,10 +20,10 @@ app.post('/meals', function (req, res) {
   res.status(201).json({'status': 'ok'});
 });
 
-app.delete('/meals/:id', function (req, res, err) {
-  var del_cb = function () {
-      if (err) {
-        res.status(404).json({'status': 'error'});
+app.delete('/meals/:id', function (req, res) {
+  var del_cb = function (err, affectedRows) {
+      if (err || affectedRows === 0) {
+        res.status(404).json({'status': 'not exists'});
       } else {
         res.status(200).json({'status': 'ok'});
       }

@@ -25,9 +25,9 @@ function postItemToServer(name, calorie, date) {
   };
 }
 
-function deleteItemFromServer(item:id) {
+function deleteItemFromServer(item, id) {
   var req = new XMLHttpRequest();
-  req.open('DELETE', + url + '/' id);
+  req.open('DELETE', url + '/' + id);
   req.send();
   req.onreadystatechange = function () {
     if (req.readyState === 4) {
