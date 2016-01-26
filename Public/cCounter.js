@@ -27,14 +27,15 @@ function postItemToServer(name, calorie, date) {
 
 function deleteItemFromServer(item:id) {
   var req = new XMLHttpRequest();
-  req.open('DELETE', id);
-  req.setRequestHeader('Content-Type', 'application/json');
-  req.send(JSON.stringify({'Name': name, 'Calorie': calorie, 'Date': date}));
+  req.open('DELETE', + url + '/' id);
+  req.send();
   req.onreadystatechange = function () {
     if (req.readyState === 4) {
+      var item = JSON.parse(req.response);
+      return cb(res.id)
     }
   }
-}
+};
 
 
 var refresh = function () {
