@@ -33,7 +33,6 @@ function addItem(attributes) {
 
 function deleteItem(id, cb) {
   connection.query ('DELETE FROM meals WHERE ID = ?', id, function(err, result) {
-    //if (err) throw err;
     console.log(result);
     var rows = result.affectedRows;
     console.log(err);
