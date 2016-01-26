@@ -21,12 +21,20 @@ function postItemToServer(name, calorie, date) {
   req.send(JSON.stringify({'Name': name, 'Calorie': calorie, 'Date': date}));
   req.onreadystatechange = function () {
     if (req.readyState === 4) {
-    /*  var res = JSON.parse(req.response);
-      return cb('ok');*/
     }
   };
 }
 
+function deleteItemFromServer(item:id) {
+  var req = new XMLHttpRequest();
+  req.open('DELETE', id);
+  req.setRequestHeader('Content-Type', 'application/json');
+  req.send(JSON.stringify({'Name': name, 'Calorie': calorie, 'Date': date}));
+  req.onreadystatechange = function () {
+    if (req.readyState === 4) {
+    }
+  }
+}
 
 
 var refresh = function () {
