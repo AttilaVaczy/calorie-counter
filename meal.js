@@ -9,19 +9,11 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
-function getItems(callback) {
+function getItems(cb) {
 	connection.query("SELECT  * FROM  meals", function (err, result) {
 		if (err) throw err;
-		callback(result);
+		cb(result);
 	});
-}
-
-function allItems () {
-  var values = [];
-    for (id in items) {
-      values.push(items[id]);
-    }
-  return values;
 }
 
 function addItem(attributes) {
@@ -42,7 +34,6 @@ function deleteItem(id, cb) {
 
 module.exports = {
   getItems: getItems,
-  allItems: allItems,
   addItem: addItem,
   deleteItem: deleteItem,
 };
