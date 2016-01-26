@@ -20,7 +20,7 @@ app.post('/meals', function (req, res) {
   res.status(201).json({'status': 'ok'});
 });
 
-app.delete('/meals/item:id', function (req, res) {
+app.delete('/meals/:id', function (req, res) {
   var item = items.deleteItem(req.body);
   res.status(200).json({item:id})
 });
