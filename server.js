@@ -21,8 +21,15 @@ app.post('/meals', function (req, res) {
 });
 
 app.delete('/meals/:id', function (req, res) {
-  var item = items.deleteItem(req.params.id);
-  res.status(200).json({'status': 'ok'});
+  var del_cb = function () {
+    var item = items.deleteItem(req.params.id, del_cb);
+      if (err) {
+        res.status(404).json({'status': 'error'});
+      } else {
+        res.status(200).json({'status': 'ok'});
+      }
+  };
+    var item = items.deleteItem(req.params.id, del_cb);
 });
 
 app.listen(3000, function () {

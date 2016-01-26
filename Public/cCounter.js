@@ -32,10 +32,10 @@ function deleteItemFromServer(item:id) {
   req.onreadystatechange = function () {
     if (req.readyState === 4) {
       var item = JSON.parse(req.response);
-      return cb(res.id)
+      return cb(res.id)()
     }
   }
-};
+}
 
 
 var refresh = function () {

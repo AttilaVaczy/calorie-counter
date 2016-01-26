@@ -31,7 +31,7 @@ function addItem(attributes) {
   });
 }
 
-function deleteItem(id) {
+function deleteItem(id, cb) {
   connection.query ('DELETE FROM meals WHERE ID = ?', id, function(err, result) {
     if (err) throw err;
     console.log(result.deleteID);
