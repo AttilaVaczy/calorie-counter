@@ -10,7 +10,7 @@ var connection = mysql.createConnection({
 connection.connect();
 
 function getItems(cb) {
-	connection.query("SELECT  * FROM  meals", function (err, result) {
+	connection.query('SELECT  * FROM  meals', function (err, result) {
 		if (err) throw err;
 		cb(result);
 	});
@@ -32,16 +32,8 @@ function deleteItem(id, cb) {
   });
 }
 
-function filterDate(id) {
-  connection.query ('SELECT ID, Name, Calorie, Name FROM meals WHERE CAST(date AS DATE)='20160126'', id, function(err, result) {
-    if (err) throw err;
-    console.log(result.instertID);
-  });
-}
-
 module.exports = {
   getItems: getItems,
   addItem: addItem,
   deleteItem: deleteItem,
-  filterDate: filterDate,
 };

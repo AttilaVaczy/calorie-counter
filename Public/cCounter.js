@@ -31,12 +31,19 @@ var refresh = function () {
 }
 
 var listCallback = function (response) {
+  var filter = filterDateInput.value
+  document.querySelector('.cal-container').innerText = ''
   response.forEach(function(calItem) {
-    var newCalItem = document.createElement('p');
-    newCalItem.innerText = calItem.Name + ' ' + calItem.Calorie + ' ' + calItem.Date
-    document.querySelector('.cal-container').appendChild(newCalItem);
-  });
-}
-
+    if (filter === calItem.Date.split('T')[0]) {
+        var newCalItem = document.createElement('p');
+        newCalItem.innerText = calItem.Name + ' ' + calItem.Calorie + ' ' + calItem.Date.split('T')[0]
+        document.querySelector('.cal-container').appendChild(newCalItem);
+    } else if (filter === "") {
+        var newCalItem = document.createElement('p');
+        newCalItem.innerText = calItem.Name + ' ' + calItem.Calorie + ' ' + calItem.Date.split('T')[0]
+        document.querySelector('.cal-container').appendChild(newCalItem);
+      }
+    });
+  }
 
 listCalItems(listCallback);
