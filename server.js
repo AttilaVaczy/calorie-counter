@@ -31,9 +31,12 @@ app.delete('/meals/:id', function (req, res) {
     var item = items.deleteItem(req.params.id, del_cb);
 });
 
-//app.filer('/meals', function (req, res) {
-  //var date = new Date(items.Date);
-//});
+app.filter('/meals/:date', function (req, res) {
+  items.filter(req.params.date, function(date) {
+    res.json(date)
+  })
+});
+
 
 app.listen(3000, function () {
   console.log('Listening on port 3000...')
