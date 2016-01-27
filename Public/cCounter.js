@@ -1,6 +1,8 @@
 'use strict';
 
 var url = "http://localhost:3000/meals";
+var calContainer = document.querySelector('.cal-container');
+
 
 function listCalItems(cb) {
   var req = new XMLHttpRequest();
@@ -26,24 +28,27 @@ function postItemToServer(name, calorie, date) {
 }
 
 var refresh = function () {
-  document.querySelector('.cal-container').innerHTML = '';
+  calContainer.innerHTML = '';
   listCalItems(listCallback);
+}
+
+
+function createItem (calItem) {
+  var newCalItem = document.createElement('p');
+  newCalItem.innerText = calItem.Name + ' ' + calItem.Calorie + ' ' + calItem.Date.split('T')[0]
+  calContainer.appendChild(newCalItem);
 }
 
 var listCallback = function (response) {
   var filter = filterDateInput.value
-  document.querySelector('.cal-container').innerText = ''
-  response.forEach(function(calItem) {
-    if (filter === calItem.Date.split('T')[0]) {
-        var newCalItem = document.createElement('p');
-        newCalItem.innerText = calItem.Name + ' ' + calItem.Calorie + ' ' + calItem.Date.split('T')[0]
-        document.querySelector('.cal-container').appendChild(newCalItem);
-    } else if (filter === "") {
-        var newCalItem = document.createElement('p');
-        newCalItem.innerText = calItem.Name + ' ' + calItem.Calorie + ' ' + calItem.Date.split('T')[0]
-        document.querySelector('.cal-container').appendChild(newCalItem);
+    calContainer.innerText = ''
+      response.forEach(function(calItem) {
+        if (filter === calItem.Date.split('T')[0]) {
+          createItem(calItem)
+          } else if (filter === "") {
+            createItem(calItem)
+          }
+        });
       }
-    });
-  }
 
 listCalItems(listCallback);

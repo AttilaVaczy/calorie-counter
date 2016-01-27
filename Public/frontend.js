@@ -11,7 +11,6 @@ submitButton.addEventListener('click', function () {
   postItemToServer(mealInput.value, calorieInput.value, dateInput.value)
 });
 
-
 filterButton.addEventListener('click', function () {
   listCalItems(listCallback)
 });
