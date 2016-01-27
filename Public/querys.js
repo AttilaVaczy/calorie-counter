@@ -12,5 +12,5 @@ submitButton.addEventListener('click', function () {
 });
 
 filterButton.addEventListener('click', function () {
-  listCalItems(listCallback)
+  listCalItems(listItem)
 });
