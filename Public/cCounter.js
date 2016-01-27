@@ -25,9 +25,6 @@ function postItemToServer(name, calorie, date) {
   };
 }
 
-function sumCalorieItemsFromServer(id, claorie)
-
-
 var refresh = function () {
   document.querySelector('.cal-container').innerHTML = '';
   listCalItems(listCallback);

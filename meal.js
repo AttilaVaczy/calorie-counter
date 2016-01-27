@@ -32,6 +32,13 @@ function deleteItem(id, cb) {
   });
 }
 
+function filterDate(id) {
+  connection.query ('SELECT ID, Name, Calorie, Name FROM meals WHERE Date = ?', id, function(err, result) {
+    if (err) throw err;
+    console.log(result.instertID);
+  });
+}
+
 module.exports = {
   getItems: getItems,
   addItem: addItem,
