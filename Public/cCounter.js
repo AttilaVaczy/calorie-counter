@@ -25,17 +25,7 @@ function postItemToServer(name, calorie, date) {
   };
 }
 
-function deleteItemFromServer(item, id) {
-  var req = new XMLHttpRequest();
-  req.open('DELETE', url + '/' + id);
-  req.send();
-  req.onreadystatechange = function () {
-    if (req.readyState === 4) {
-      var item = JSON.parse(req.response);
-      return cb(res.id)()
-    }
-  }
-}
+function sumCalorieItemsFromServer(id, claorie)
 
 
 var refresh = function () {
