@@ -3,23 +3,78 @@
   <head>
     <meta charset="utf-8">
     <title>AVIATO CALORIE COUNTER</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
   <body>
     <h1>Aviato Calorie counter</h1>
     <h2>health beauty body</h2>
-      <input class="meal-input" type="text" id="addForm" placeholder="Add your meal" autofocus="">
-      <input class="calorie-input" type="text" id="addForm" placeholder="Count calories" autofocus="">
-      <input class="date-input" type="text" id="addForm" placeholder="Date" autofocus="">
-      <input class="filter-date-input" type="text" id="addForm" placeholder="Filter date" autofocus="">
     <ul class="cal-items"></ul>
-      <button class="submit-button">Submit</button>
-        <button class="filter-button">Filter</button>
-    <div class="cal-container"></div>
+
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--4-col">
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="meal-input mdl-textfield__input" type="text" id="sample1">
+            <label class="mdl-textfield__label" for="sample1">Add meal...</label>
+          </div>
+        </form>
+
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="calorie-input mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+            <label class="mdl-textfield__label" for="sample2">Count calories...</label>
+            <span class="mdl-textfield__error">Input is not a number!</span>
+          </div>
+        </form>
+
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="date-input mdl-textfield__input" type="text" id="sample1">
+            <label class="mdl-textfield__label" for="sample1">Add date...</label>
+          </div>
+        </form>
+
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="filter-date-input mdl-textfield__input" type="text" id="sample1">
+            <label class="mdl-textfield__label" for="sample1">Filter meal...</label>
+          </div>
+        </form>
+        <button class="submit mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Submit</button>
+        <button class="filter mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Filter</button>
+      </div>
+
+      <div class="mdl-cell mdl-cell--4-col">
+        4
+      </div>
+      <div class="mdl-cell mdl-cell--4-col">4</div>
+    </div>
+
+    <div class="cal-container">
+          <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+      <thead>
+        <tr>
+          <th class="mdl-data-table__cell--non-numeric">Material</th>
+          <th>Quantity</th>
+          <th>Unit price</th>
+        </tr>
+      </thead>
+      <tbody class="tbody">
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
+          <td>25</td>
+          <td>$2.90</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
     <div class="sum-container">
       <h1>Total Calorie:</h1>
       <div class="sum"></div>
     </div>
+      <script src="./material.min.js"></script>
       <script src="xhr.js"></script>
       <script src="querys.js"></script>
       <script src="process.js"></script>

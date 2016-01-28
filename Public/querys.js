@@ -1,7 +1,7 @@
 'use strict';
 
-var submitButton = document.querySelector('.submit-button');
-var filterButton = document.querySelector('.filter-button')
+var submitButton = document.querySelector('.submit')
+var filterButton = document.querySelector('.filter')
 var mealInput = document.querySelector('.meal-input');
 var calorieInput = document.querySelector('.calorie-input');
 var dateInput = document.querySelector('.date-input');

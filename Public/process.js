@@ -2,22 +2,32 @@
 
 var calContainer = document.querySelector('.cal-container');
 var calorieSum = document.querySelector('.sum');
+var calorieTable = document.querySelector('tbody');
 
 var refresh = function () {
-  calContainer.innerHTML = '';
+  var new_tbody = document.createElement('tbody');
+  calorieTable.parentNode.replaceChild(new_tbody, calorieTable);
+  calorieTable = new_tbody;
   listCalItems(listItem);
 }
 
 function createItem (calItem) {
-  var newCalItem = document.createElement('p');
-  newCalItem.innerText = calItem.Name + ' ' + calItem.Calorie + ' ' + calItem.Date.split('T')[0]
-  calContainer.appendChild(newCalItem);
+  var newCalItem = document.createElement('tr');
+  var nameTd = document.createElement('td');
+  var calTd = document.createElement('td');
+  var dateTd = document.createElement('td');
+  nameTd.innerText = calItem.Name;
+  calTd.innerText = calItem.Calorie;
+  dateTd.innerText = calItem.Date.split('T')[0];
+  newCalItem.appendChild(nameTd);
+  newCalItem.appendChild(calTd);
+  newCalItem.appendChild(dateTd);
+  calorieTable.appendChild(newCalItem);
 }
 
 var listItem = function (response) {
   var sum = 0;
   var filter = filterDateInput.value
-    calContainer.innerText = ''
     response.forEach(function(calItem) {
       if (filterItem(calItem)) {
         sum += calItem.Calorie
