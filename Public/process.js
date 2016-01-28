@@ -28,6 +28,7 @@ function createItem (calItem) {
 var listItem = function (response) {
   var sum = 0;
   var filter = filterDateInput.value
+  calorieTable.innerHTML = "";
     response.forEach(function(calItem) {
       if (filterItem(calItem)) {
         sum += calItem.Calorie
