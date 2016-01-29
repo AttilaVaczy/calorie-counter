@@ -25,3 +25,15 @@ function postItemToServer(name, calorie, date) {
     }
   };
 }
+
+function deleteItems(id, cb) {
+  var req = new XMLHttpRequest();
+  req.open('DELETE', url+'/'+id);
+  req.send();
+  req.onreadystatechange = function () {
+    if (req.readyState === 4) {
+      var response = JSON.parse(req.response);
+      cb(response);
+    }
+  };
+}
