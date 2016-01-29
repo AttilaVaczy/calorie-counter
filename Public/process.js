@@ -18,6 +18,8 @@ function createItem (calItem) {
   var dateTd = document.createElement('td');
   var delTd = document.createElement('td');
   var delBut = document.createElement('button');
+  delBut.innerText = 'Delete'
+  delBut.classList.add("mdl-js-button", "mdl-button--raised", "mdl-js-ripple-effect", "mdl-button--accent");
   delBut.addEventListener('click', function () {
     deleteItems(calItem.ID, refresh)
   });

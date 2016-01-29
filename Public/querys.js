@@ -3,7 +3,6 @@
 var submitButton = document.querySelector('.submit')
 var filterButton = document.querySelector('.filter')
 var allButton = document.querySelector('.all')
-var deleteButton = document.querySelector('.delete')
 var mealInput = document.querySelector('.meal-input');
 var calorieInput = document.querySelector('.calorie-input');
 var dateInput = document.querySelector('.date-input');
