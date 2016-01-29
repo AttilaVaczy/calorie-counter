@@ -61,6 +61,7 @@
           </tr>
         </thead>
         <tbody class="tbody">
+          <a href='mdl-data-table__cell--non-numeric' onclick='del_tr(this);return false;'>x</a>
           <tr>
             <td class="mdl-data-table__cell--non-numeric"></td>
             <td></td>
@@ -79,5 +80,15 @@
       <script src="xhr.js"></script>
       <script src="querys.js"></script>
       <script src="process.js"></script>
+      <script type='./material.min.js'>
+        function del_tr(remtr)  {
+          while((remtr.nodeName.toLowerCase())!='tr')
+            remtr = remtr.parentNode;
+            remtr.parentNode.removeChild(remtr);
+        }
+        function del_id(id) {
+          del_tr(document.getElementById(id));
+        }
+      </script>
   </body>
 </html>
